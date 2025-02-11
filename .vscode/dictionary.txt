@@ -33,6 +33,7 @@ heroicons
 iconify
 interlaceskip
 jfif
+jpgx
 lockb
 mcus
 Mikola

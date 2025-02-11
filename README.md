@@ -6,7 +6,7 @@
 <!-- [![npm downloads][npm-downloads-src]][npm-downloads-href] -->
 <!-- [![Codecov][codecov-src]][codecov-href] -->
 
-# ts-jpeg
+# jpgx
 
 > A TypeScript library for encoding & decoding JPEG images with robust memory management.
 
@@ -26,11 +26,11 @@
 ## Installation
 
 ```bash
-npm install ts-jpeg
+npm install jpgx
 # or
-pnpm add ts-jpeg
+pnpm add jpgx
 # or
-bun i ts-jpeg
+bun i jpgx
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ bun i ts-jpeg
 ### Decoding JPEG Images
 
 ```ts
-import { decode } from 'ts-jpeg'
+import { decode } from 'jpgx'
 
 // Basic decoding
 const jpegBuffer = await fetch('image.jpg').then(res => res.arrayBuffer())
@@ -60,7 +60,7 @@ const { width, height, data, exifBuffer, comments } = image
 ### Encoding JPEG Images
 
 ```ts
-import { JPEGEncoder } from 'ts-jpeg'
+import { JPEGEncoder } from 'jpgx'
 
 // Create an encoder with quality setting (1-100)
 const encoder = new JPEGEncoder(85) // 85% quality
@@ -75,7 +75,7 @@ const jpegData = encoder.encode({
   width,
   height,
   data: rgbData,
-  comments: ['Created with ts-jpeg'],
+  comments: ['Created with jpgx'],
   exifBuffer: existingExifData // Optional
 })
 
@@ -88,7 +88,7 @@ await fs.writeFile('output.jpg', jpegData)
 The library includes built-in memory management to prevent out-of-memory errors:
 
 ```ts
-import { decode, JpegImage } from 'ts-jpeg'
+import { decode, JpegImage } from 'jpgx'
 
 // Set global memory limits
 JpegImage.resetMaxMemoryUsage(512 * 1024 * 1024) // 512MB limit
@@ -200,7 +200,7 @@ bun test
 
 ## Changelog
 
-Please see our [releases](https://github.com/stackjs/ts-jpeg/releases) page for more information on what has changed recently.
+Please see our [releases](https://github.com/stackjs/jpgx/releases) page for more information on what has changed recently.
 
 ## Contributing
 
@@ -210,7 +210,7 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 For help, discussion about best practices, or any other conversation that would benefit from being searchable:
 
-[Discussions on GitHub](https://github.com/stacksjs/ts-starter/discussions)
+[Discussions on GitHub](https://github.com/stacksjs/jpgx/discussions)
 
 For casual chit-chat with others using this package:
 
@@ -240,10 +240,10 @@ The MIT License (MIT). Please see [LICENSE](LICENSE.md) for more information.
 Made with 💙
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/ts-jpeg?style=flat-square
-[npm-version-href]: https://npmjs.com/package/ts-jpeg
-[github-actions-src]: https://img.shields.io/github/actions/workflow/status/stacksjs/ts-starter/ci.yml?style=flat-square&branch=main
-[github-actions-href]: https://github.com/stacksjs/ts-starter/actions?query=workflow%3Aci
+[npm-version-src]: https://img.shields.io/npm/v/jpgx?style=flat-square
+[npm-version-href]: https://npmjs.com/package/jpgx
+[github-actions-src]: https://img.shields.io/github/actions/workflow/status/stacksjs/jpgx/ci.yml?style=flat-square&branch=main
+[github-actions-href]: https://github.com/stacksjs/jpgx/actions?query=workflow%3Aci
 
-<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/stacksjs/ts-starter/main?style=flat-square
-[codecov-href]: https://codecov.io/gh/stacksjs/ts-starter -->
+<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/stacksjs/jpgx/main?style=flat-square
+[codecov-href]: https://codecov.io/gh/stacksjs/jpgx -->
