@@ -1,4 +1,16 @@
 
+## v0.1.0...main
+
+[compare changes](https://github.com/stacksjs/jpgx/compare/v0.1.0...main)
+
+### 🏡 Chore
+
+- Rename to `jpgx` ([68204ce](https://github.com/stacksjs/jpgx/commit/68204ce))
+
+### ❤️ Contributors
+
+- Chris ([@chrisbbreuer](http://github.com/chrisbbreuer))
+
 ## ...main
 
 

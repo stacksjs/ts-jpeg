@@ -1,7 +1,7 @@
 {
   "name": "jpgx",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "TypeScript implementation of a performant JPEG encoder & decoder.",
   "author": "Chris Breuer <chris@stacksjs.org>",
   "license": "MIT",
