@@ -1,7 +1,8 @@
-const assert = require('node:assert')
-const fs = require('node:fs')
-const path = require('node:path')
-const jpeg = require('..')
+import assert from 'node:assert'
+import { Buffer } from 'node:buffer'
+import fs from 'node:fs'
+import path from 'node:path'
+import jpeg from '../src'
 
 function fixture(name) {
   return fs.readFileSync(path.join(__dirname, 'fixtures', name))

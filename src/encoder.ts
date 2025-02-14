@@ -1,4 +1,4 @@
-import type { BufferLike, BufferRet, ImageData, RawImageData, UintArrRet } from './types'
+import type { BufferLike, BufferRet, ImageData, RawImageData } from './types'
 import { Buffer } from 'node:buffer'
 
 /*
