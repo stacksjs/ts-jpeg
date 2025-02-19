@@ -12,16 +12,16 @@
 
 ## Features
 
-- 📸 **Complete JPEG Support**: Full implementation of JPEG encoding and decoding
-- 🎨 **Color Space Handling**: Support for RGB, CMYK, and Grayscale color spaces
-- 🔍 **EXIF Data**: Preserve and extract EXIF metadata
-- 💾 **Memory Safe**: Built-in memory management to prevent OOM errors
-- 🎯 **Quality Control**: Fine-tune compression quality for optimal file size
-- 💪 **Type Safe**: Written in TypeScript with comprehensive type definitions
-- ⚡ **Efficient**: Optimized DCT and color transformation algorithms
-- 🛡️ **Error Handling**: Robust error handling for malformed JPEG data
-- 📦 **Lightweight**: Zero dependencies and minimal footprint
-- 🌐 **Browser & Server**: Works in both environments with no extra setup
+- 📸 **Complete JPEG Support** _Full implementation of JPEG encoding and decoding_
+- 🎨 **Color Space Handling** _Support for RGB, CMYK, and Grayscale color spaces_
+- 🔍 **EXIF Data** _Preserve and extract EXIF metadata_
+- 💾 **Memory Safe** _Built-in memory management to prevent OOM errors_
+- 🎯 **Quality Control** _Fine-tune compression quality for optimal file size_
+- 💪 **Type Safe** _Written in TypeScript with comprehensive type definitions_
+- ⚡ **Efficient** _Optimized DCT and color transformation algorithms_
+- 🛡️ **Error Handling** _Robust error handling for malformed JPEG data_
+- 📦 **Lightweight** _Zero dependencies and minimal footprint_
+- 🌐 **Browser & Server** _Works in both environments with no extra setup_
 
 ## Installation
 
