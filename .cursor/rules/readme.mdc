@@ -1,10 +1,8 @@
-<p align="center"><img src=".github/art/cover.jpg" alt="Social Card of this repo"></p>
-
-[![npm version][npm-version-src]][npm-version-href]
-[![GitHub Actions][github-actions-src]][github-actions-href]
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-<!-- [![npm downloads][npm-downloads-src]][npm-downloads-href] -->
-<!-- [![Codecov][codecov-src]][codecov-href] -->
+---
+description: General information based on the latest ./README.md content
+globs: 
+---
+Update it if APIs change:
 
 # jpgx
 
@@ -88,9 +86,7 @@ await fs.writeFile('output.jpg', jpegData)
 The library includes built-in memory management to prevent out-of-memory errors:
 
 ```ts
-import { decode, JpegImage } from 'jpgx'
-
-// Set global memory limits
+import { decode, Jpe// Set global memory limits
 JpegImage.resetMaxMemoryUsage(512 * 1024 * 1024) // 512MB limit
 
 try {
@@ -175,7 +171,7 @@ import { Buffer } from 'node:buffer'
 interface JpegOptions {
   colorTransform?: boolean
   formatAsRGBA?: boolean
-  tolerantDecoding?: boolean
+?: boolean
   maxResolutionInMP?: number
   maxMemoryUsageInMB?: number
 }
@@ -191,59 +187,3 @@ interface ImageData {
 // Types are automatically inferred
 const { width, height, data } = decode(jpegBuffer)
 ```
-
-## Testing
-
-```bash
-bun test
-```
-
-## Changelog
-
-Please see our [releases](https://github.com/stackjs/jpgx/releases) page for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
-
-## Community
-
-For help, discussion about best practices, or any other conversation that would benefit from being searchable:
-
-[Discussions on GitHub](https://github.com/stacksjs/jpgx/discussions)
-
-For casual chit-chat with others using this package:
-
-[Join the Stacks Discord Server](https://discord.gg/stacksjs)
-
-## Postcardware
-
-“Software that is free, but hopes for a postcard.” We love receiving postcards from around the world showing where `jpgx` is being used! We showcase them on our website too.
-
-Our address: Stacks.js, 12665 Village Ln #2306, Playa Vista, CA 90094, United States 🌎
-
-## Credits
-
-Many thanks to [`jpeg-js`](https://github.com/jpeg-js/jpeg-js) and its contributors for inspiring this project.
-
-## Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Stacks development. If you are interested in becoming a sponsor, please reach out to us.
-
-- [JetBrains](https://www.jetbrains.com/)
-- [The Solana Foundation](https://solana.com/)
-
-## License
-
-The MIT License (MIT). Please see [LICENSE](LICENSE.md) for more information.
-
-Made with 💙
-
-<!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/jpgx?style=flat-square
-[npm-version-href]: https://npmjs.com/package/jpgx
-[github-actions-src]: https://img.shields.io/github/actions/workflow/status/stacksjs/jpgx/ci.yml?style=flat-square&branch=main
-[github-actions-href]: https://github.com/stacksjs/jpgx/actions?query=workflow%3Aci
-
-<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/stacksjs/jpgx/main?style=flat-square
-[codecov-href]: https://codecov.io/gh/stacksjs/jpgx -->
