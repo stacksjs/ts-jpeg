@@ -60,6 +60,31 @@ const sidebar = [
       { text: 'Config', link: '/config' },
     ],
   },
+  {
+    text: 'Features',
+    items: [
+      { text: 'Encoder', link: '/features/encoder' },
+      { text: 'Decoder', link: '/features/decoder' },
+      { text: 'Types', link: '/features/types' },
+    ],
+  },
+  {
+    text: 'Advanced',
+    items: [
+      { text: 'Performance', link: '/advanced/performance' },
+      { text: 'Configuration', link: '/advanced/configuration' },
+      { text: 'Best Practices', link: '/advanced/best-practices' },
+    ],
+  },
+  {
+    text: 'API Reference',
+    items: [
+      { text: 'Encoder API', link: '/api/encoder' },
+      { text: 'Decoder API', link: '/api/decoder' },
+      { text: 'Types', link: '/api/types' },
+      { text: 'Interfaces', link: '/api/interfaces' },
+    ],
+  },
   { text: 'Showcase', link: '/Showcase' },
 ]
 const description = 'A TypeScript Starter Kit. For a better Development Experience.'
