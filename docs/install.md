@@ -1,118 +1,104 @@
-# Install
+# Installation
 
-_This is just an example of the ts-starter docs._
-
-Installing `rpx` is easy. Simply pull it in via your package manager of choice, or download the binary directly.
+Installing jpgx is straightforward with any JavaScript package manager.
 
 ## Package Managers
 
-Choose your package manager of choice:
+### Bun (Recommended)
 
-::: code-group
-
-```sh [npm]
-npm install --save-dev @stacksjs/rpx
-# npm i -d @stacksjs/rpx
-
-# or, install globally via
-npm i -g @stacksjs/rpx
+```bash
+bun add jpgx
 ```
 
-```sh [bun]
-bun install --dev @stacksjs/rpx
-# bun add --dev @stacksjs/rpx
-# bun i -d @stacksjs/rpx
+### npm
 
-# or, install globally via
-bun add --global @stacksjs/rpx
+```bash
+npm install jpgx
 ```
 
-```sh [pnpm]
-pnpm add --save-dev @stacksjs/rpx
-# pnpm i -d @stacksjs/rpx
+### pnpm
 
-# or, install globally via
-pnpm add --global @stacksjs/rpx
+```bash
+pnpm add jpgx
 ```
 
-```sh [yarn]
-yarn add --dev @stacksjs/rpx
-# yarn i -d @stacksjs/rpx
+### Yarn
 
-# or, install globally via
-yarn global add @stacksjs/rpx
+```bash
+yarn add jpgx
 ```
 
-```sh [brew]
-brew install rpx # coming soon
+## Requirements
+
+- **Runtime**: Bun 1.0+, Node.js 18+, or modern browsers
+- **TypeScript**: 5.0+ (for TypeScript projects)
+
+## Verify Installation
+
+After installation, verify jpgx is working:
+
+```typescript
+import { encode, decode } from 'jpgx'
+
+// Create a simple test image (1x1 red pixel)
+const testImage = {
+  width: 1,
+  height: 1,
+  data: new Uint8Array([255, 0, 0, 255]), // RGBA
+}
+
+const encoded = encode(testImage, 90)
+console.log('Encoded JPEG size:', encoded.data.length, 'bytes')
+
+const decoded = decode(encoded.data)
+console.log('Decoded dimensions:', decoded.width, 'x', decoded.height)
 ```
 
-```sh [pkgx]
-pkgx rpx # coming soon
+## Browser Usage
+
+jpgx works in modern browsers without any bundler configuration:
+
+```html
+<script type="module">
+import { encode, decode } from 'https://esm.sh/jpgx'
+
+// Use encode/decode in the browser
+</script>
 ```
 
-:::
+## TypeScript Configuration
 
-Read more about how to use it in the Usage section of the documentation.
+For TypeScript projects, ensure your `tsconfig.json` includes:
 
-## Binaries
-
-Choose the binary that matches your platform and architecture:
-
-::: code-group
-
-```sh [macOS (arm64)]
-# Download the binary
-curl -L https://github.com/stacksjs/rpx/releases/download/v0.9.1/rpx-darwin-arm64 -o rpx
-
-# Make it executable
-chmod +x rpx
-
-# Move it to your PATH
-mv rpx /usr/local/bin/rpx
+```json
+{
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "esModuleInterop": true
+  }
+}
 ```
 
-```sh [macOS (x64)]
-# Download the binary
-curl -L https://github.com/stacksjs/rpx/releases/download/v0.9.1/rpx-darwin-x64 -o rpx
+## Development Setup
 
-# Make it executable
-chmod +x rpx
+If you want to contribute to jpgx or build from source:
 
-# Move it to your PATH
-mv rpx /usr/local/bin/rpx
+```bash
+# Clone the repository
+git clone https://github.com/stacksjs/jpgx.git
+cd jpgx
+
+# Install dependencies
+bun install
+
+# Build the project
+bun run build
+
+# Run tests
+bun test
 ```
 
-```sh [Linux (arm64)]
-# Download the binary
-curl -L https://github.com/stacksjs/rpx/releases/download/v0.9.1/rpx-linux-arm64 -o rpx
+## Next Steps
 
-# Make it executable
-chmod +x rpx
-
-# Move it to your PATH
-mv rpx /usr/local/bin/rpx
-```
-
-```sh [Linux (x64)]
-# Download the binary
-curl -L https://github.com/stacksjs/rpx/releases/download/v0.9.1/rpx-linux-x64 -o rpx
-
-# Make it executable
-chmod +x rpx
-
-# Move it to your PATH
-mv rpx /usr/local/bin/rpx
-```
-
-```sh [Windows (x64)]
-# Download the binary
-curl -L https://github.com/stacksjs/rpx/releases/download/v0.9.1/rpx-windows-x64.exe -o rpx.exe
-
-# Move it to your PATH (adjust the path as needed)
-move rpx.exe C:\Windows\System32\rpx.exe
-```
-
-::: tip
-You can also find the `rpx` binaries in GitHub [releases](https://github.com/stacksjs/rpx/releases).
-:::
+- [Usage Guide](/usage) - Learn how to encode and decode images
+- [Configuration](/config) - Explore encoding and decoding options
