@@ -165,6 +165,7 @@ interface BufferRet {
 ```
 
 The output `data` contains a valid JPEG file that can be:
+
 - Written to disk
 - Sent over network
 - Displayed in browser

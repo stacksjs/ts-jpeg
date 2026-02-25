@@ -13,6 +13,7 @@ name: Optimize Images
 on:
   push:
     paths:
+
       - 'images/**'
       - 'assets/**'
 
@@ -20,17 +21,21 @@ jobs:
   optimize:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - uses: oven-sh/setup-bun@v1
 
       - name: Install dependencies
+
         run: bun add jpgx
 
       - name: Optimize images
+
         run: bun run scripts/optimize-images.ts
 
       - name: Commit optimized images
+
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -47,6 +52,7 @@ name: Validate Images
 on:
   pull_request:
     paths:
+
       - '**.jpg'
       - '**.jpeg'
 
@@ -54,14 +60,17 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - uses: oven-sh/setup-bun@v1
 
       - name: Install jpgx
+
         run: bun add jpgx
 
       - name: Validate JPEG files
+
         run: |
           bun run << 'EOF'
           import { decode } from 'jpgx'
@@ -99,14 +108,17 @@ jobs:
   check-sizes:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - uses: oven-sh/setup-bun@v1
 
       - name: Install jpgx
+
         run: bun add jpgx
 
       - name: Check image sizes
+
         run: |
           MAX_SIZE_KB=500
           MAX_RESOLUTION_MP=5
@@ -119,7 +131,7 @@ jobs:
           const maxMP = Number(process.env.MAX_RESOLUTION_MP)
           const errors = []
 
-          const glob = new Glob('**/*.{jpg,jpeg}')
+          const glob = new Glob('**/_.{jpg,jpeg}')
 
           for await (const path of glob.scan('.')) {
             const file = Bun.file(path)
@@ -131,7 +143,7 @@ jobs:
 
             const data = await file.arrayBuffer()
             const image = decode(new Uint8Array(data))
-            const mp = (image.width * image.height) / 1_000_000
+            const mp = (image.width _ image.height) / 1_000_000
 
             if (mp > maxMP) {
               errors.push(`${path}: ${mp.toFixed(1)}MP exceeds ${maxMP}MP limit`)
@@ -155,6 +167,7 @@ jobs:
 ```yaml
 # .gitlab-ci.yml
 stages:
+
   - validate
   - optimize
   - deploy
@@ -163,22 +176,29 @@ validate-images:
   stage: validate
   image: oven/bun:latest
   script:
+
     - bun add jpgx
     - bun run scripts/validate-images.ts
+
   rules:
+
     - changes:
         - "**/*.jpg"
-        - "**/*.jpeg"
+        - "**/_.jpeg"
 
 optimize-images:
   stage: optimize
   image: oven/bun:latest
   script:
+
     - bun add jpgx
     - bun run scripts/optimize-images.ts
+
   artifacts:
     paths:
+
       - optimized/
+
 ```
 
 ## Processing Scripts
@@ -205,8 +225,8 @@ async function optimizeImage(inputPath: string, outputPath: string) {
 
   if (width > MAX_WIDTH || height > MAX_HEIGHT) {
     const scale = Math.min(MAX_WIDTH / width, MAX_HEIGHT / height)
-    width = Math.round(width * scale)
-    height = Math.round(height * scale)
+    width = Math.round(width _ scale)
+    height = Math.round(height _ scale)
     // Note: jpgx doesn't resize - use another library for that
   }
 
@@ -222,7 +242,7 @@ async function optimizeImage(inputPath: string, outputPath: string) {
   const originalSize = Bun.file(inputPath).size
   if (result.data.length < originalSize) {
     await Bun.write(outputPath, result.data)
-    const savings = ((originalSize - result.data.length) / originalSize * 100).toFixed(1)
+    const savings = ((originalSize - result.data.length) / originalSize _ 100).toFixed(1)
     console.log(`Optimized ${inputPath}: ${savings}% smaller`)
     return true
   }
@@ -357,11 +377,15 @@ services:
   image-processor:
     build: .
     volumes:
+
       - ./images:/app/images
       - ./output:/app/output
+
     environment:
+
       - QUALITY=75
       - MAX_SIZE_KB=500
+
 ```
 
 ## Kubernetes Job
@@ -375,16 +399,24 @@ spec:
   template:
     spec:
       containers:
+
         - name: optimizer
+
           image: your-registry/image-processor:latest
           volumeMounts:
+
             - name: images
+
               mountPath: /app/images
           env:
+
             - name: QUALITY
+
               value: "75"
       volumes:
+
         - name: images
+
           persistentVolumeClaim:
             claimName: images-pvc
       restartPolicy: Never

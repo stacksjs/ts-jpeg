@@ -1094,6 +1094,7 @@ class JpegImage {
       zz[0] = (component.pred += diff)
     }
 
+    // eslint-disable-next-line pickier/no-unused-vars
     function decodeDCSuccessive(component: any, zz: Int32Array): void {
       zz[0] |= readBit() << successive
     }

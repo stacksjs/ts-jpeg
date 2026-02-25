@@ -1,10 +1,15 @@
+// @ts-nocheck
+import { describe, expect, it } from 'bun:test'
 import assert from 'node:assert'
 import { Buffer } from 'node:buffer'
 import fs from 'node:fs'
 import path from 'node:path'
 import jpeg from '../src'
 
-function fixture(name) {
+
+type DecodeResult = ReturnType<typeof jpeg.decode> & { exifBuffer?: ArrayBuffer, comments?: string[] }
+
+function fixture(name: string) {
   return fs.readFileSync(path.join(__dirname, 'fixtures', name))
 }
 
@@ -60,7 +65,7 @@ it('decodes a grayscale JPEG', () => {
   const rawImageData = jpeg.decode(jpegData)
   expect(rawImageData.width).toEqual(580)
   expect(rawImageData.height).toEqual(599)
-  expect(rawImageData.comments).toEqual(['File source: http://commons.wikimedia.org/wiki/File:Apsara-mit-Sitar.jpg'])
+  expect((rawImageData as DecodeResult).comments).toEqual(['File source: http://commons.wikimedia.org/wiki/File:Apsara-mit-Sitar.jpg'])
   const expected = fixture('apsara.rgba')
   expect(rawImageData.data).toEqual(expected)
 })
@@ -311,7 +316,7 @@ it('limits memory exposure', () => {
 
 // See https://github.com/jpeg-js/jpeg-js/issues/105
 it('errors out invalid sampling factors', () => {
-  expect(() => jpeg.decode(Buffer.from('/9j/wfFR2AD/UdgA/9r/3g==', 'base64')).toThrow(
+  expect(() => jpeg.decode(Buffer.from('/9j/wfFR2AD/UdgA/9r/3g==', 'base64'))).toThrow(
     'Invalid sampling factor, expected values above 0',
-  ))
+  )
 })

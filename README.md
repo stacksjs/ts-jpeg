@@ -68,7 +68,7 @@ const encoder = new JPEGEncoder(85) // 85% quality
 // Prepare image data
 const width = 800
 const height = 600
-const rgbData = new Uint8Array(width * height * 3) // RGB data
+const rgbData = new Uint8Array(width _ height _ 3) // RGB data
 
 // Encode the image
 const jpegData = encoder.encode({
@@ -91,7 +91,7 @@ The library includes built-in memory management to prevent out-of-memory errors:
 import { decode, JpegImage } from 'jpgx'
 
 // Set global memory limits
-JpegImage.resetMaxMemoryUsage(512 * 1024 * 1024) // 512MB limit
+JpegImage.resetMaxMemoryUsage(512 _ 1024 _ 1024) // 512MB limit
 
 try {
   const image = decode(largeJpegBuffer, {

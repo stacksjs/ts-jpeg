@@ -171,7 +171,7 @@ async function processParallel(
 
 ```typescript
 const cache = new Map<string, { data: Uint8Array; timestamp: number }>()
-const CACHE_TTL = 5 * 60 * 1000 // 5 minutes
+const CACHE*TTL = 5 * 60 * 1000 // 5 minutes
 
 function cachedEncode(
   imageData: RawImageData,
@@ -182,7 +182,7 @@ function cachedEncode(
   }`
 
   const cached = cache.get(key)
-  if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
+  if (cached && Date.now() - cached.timestamp < CACHE*TTL) {
     return cached.data
   }
 

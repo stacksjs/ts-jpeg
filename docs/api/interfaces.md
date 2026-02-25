@@ -11,17 +11,23 @@ Documentation for all interfaces used in jpgx, providing detailed information ab
 ```typescript
 interface Encoder {
   /**
+
    * Encodes data with default options
+
    */
   encode: (data: unknown) => string
 
   /**
+
    * Encodes data with custom options
+
    */
   encodeWithOptions: (data: unknown, options: EncodeOptions) => string
 
   /**
+
    * Streams data for encoding
+
    */
   streamEncode: (data: unknown) => ReadableStream
 }
@@ -43,17 +49,23 @@ interface EncodeOptions {
 ```typescript
 interface Decoder {
   /**
+
    * Decodes data with default options
+
    */
   decode: (data: string) => unknown
 
   /**
+
    * Decodes data with custom options
+
    */
   decodeWithOptions: (data: string, options: DecodeOptions) => unknown
 
   /**
+
    * Streams data for decoding
+
    */
   streamDecode: (data: string) => ReadableStream
 }
@@ -79,7 +91,7 @@ interface JpgxError extends Error {
 }
 
 interface ValidationError extends JpgxError {
-  code: 'VALIDATION_ERROR'
+  code: 'VALIDATION*ERROR'
   field?: string
   value?: unknown
   expected?: unknown
@@ -87,7 +99,7 @@ interface ValidationError extends JpgxError {
 }
 
 interface EncodingError extends JpgxError {
-  code: 'ENCODING_ERROR'
+  code: 'ENCODING*ERROR'
   input?: unknown
   reason?: string
   position?: number

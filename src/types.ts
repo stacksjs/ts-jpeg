@@ -29,7 +29,7 @@ export interface ImageData {
 export type BufferLike = Buffer | Uint8Array | ArrayLike<number> | Iterable<number> | ArrayBuffer
 
 export interface DecoderOptions {
-  useTArray: boolean
+  useTArray?: boolean
   colorTransform?: boolean
   formatAsRGBA?: boolean
   tolerantDecoding?: boolean
