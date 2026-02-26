@@ -22,7 +22,7 @@
 //   in PostScript Level 2, Technical Note #5116
 //   (partners.adobe.com/public/developer/en/ps/sdk/5116.DCT_Filter.pdf)
 
-import type { Buffer } from 'node:buffer'
+import { Buffer } from 'node:buffer'
 import type { BufferLike, DecoderOptions, UintArrRet } from './types'
 
 class JpegImage {
@@ -261,7 +261,7 @@ class JpegImage {
     let jfif = null
     let adobe = null
     let frame: any
-    let resetInterval: number
+    let resetInterval: number = 0
     const quantizationTables: any[] = []
     const frames: any[] = []
     const huffmanTablesAC: any[] = []
@@ -395,6 +395,9 @@ class JpegImage {
           }
 
           const componentsCount = data[offset++]
+          if (componentsCount === 0) {
+            throw new Error('Invalid sampling factor, expected values above 0')
+          }
           let componentId
           for (i = 0; i < componentsCount; i++) {
             componentId = data[offset]
@@ -457,7 +460,7 @@ class JpegImage {
 
         case 0xFFDA: {
           // SOS (Start of Scan)
-          // const scanLength = readUint16()
+          readUint16() // skip scan header length
           const selectorsCount = data[offset++]
           const components: any[] = []
           let component
@@ -473,7 +476,6 @@ class JpegImage {
           const spectralStart = data[offset++]
           const spectralEnd = data[offset++]
           const successiveApproximation = data[offset++]
-          const resetInterval: number = 0
 
           const processed = this.decodeScan(
             data,
@@ -518,6 +520,16 @@ class JpegImage {
               break
             }
           }
+
+          // Skip unknown markers that have a length field (0xFFxx where xx >= 0x02)
+          if ((fileMarker & 0xFF00) === 0xFF00) {
+            const markerLength = readUint16()
+            if (markerLength > 2) {
+              offset += markerLength - 2
+            }
+            break
+          }
+
           throw new Error(`unknown JPEG marker ${fileMarker.toString(16)}`)
       }
       fileMarker = readUint16()
@@ -1393,11 +1405,15 @@ export function decode(jpegData: BufferLike, userOpts?: DecoderOptions): (UintAr
   try {
     JpegImage.requestMemoryAllocation(bytesNeeded)
 
+    const imageData = opts.useTArray
+      ? new Uint8Array(bytesNeeded)
+      : Buffer.alloc(bytesNeeded)
+
     image = {
       width: decoder.width,
       height: decoder.height,
       exifBuffer: decoder.exifBuffer,
-      data: new Uint8ClampedArray(decoder.getData(decoder.width, decoder.height).buffer),
+      data: imageData,
       comments: decoder.comments.length > 0 ? decoder.comments : undefined,
       colorSpace: 'srgb' as const,
     } as ImageData & { comments?: string[] }
