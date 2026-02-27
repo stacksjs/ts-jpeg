@@ -1406,7 +1406,7 @@ export function decode(jpegData: BufferLike, userOpts?: DecoderOptions): (UintAr
     JpegImage.requestMemoryAllocation(bytesNeeded)
 
     const imageData = opts.useTArray
-      ? new Uint8ClampedArray(bytesNeeded)
+      ? new Uint8Array(bytesNeeded)
       : Buffer.alloc(bytesNeeded)
 
     image = {
