@@ -23,7 +23,7 @@
 //   (partners.adobe.com/public/developer/en/ps/sdk/5116.DCT_Filter.pdf)
 
 import { Buffer } from 'node:buffer'
-import type { BufferLike, DecoderOptions, UintArrRet } from './types'
+import type { BufferLike, DecoderOptions, ImageData as JpegImageData, UintArrRet } from './types'
 
 class JpegImage {
   private static dctZigZag = new Int32Array([
@@ -1372,7 +1372,7 @@ class JpegImage {
   }
 }
 
-export function decode(jpegData: BufferLike, userOpts?: DecoderOptions): (UintArrRet & { comments?: string[] }) | ImageData {
+export function decode(jpegData: BufferLike, userOpts?: DecoderOptions): (UintArrRet & { comments?: string[] }) | JpegImageData {
   const defaultOpts = {
     // "undefined" means "Choose whether to transform colors based on the image's color model."
     colorTransform: undefined,
@@ -1398,8 +1398,9 @@ export function decode(jpegData: BufferLike, userOpts?: DecoderOptions): (UintAr
   const channels = opts.formatAsRGBA ? 4 : 3
   const bytesNeeded = decoder.width * decoder.height * channels
 
-  let image: ImageData & {
+  let image: JpegImageData & {
     comments?: string[]
+    exifBuffer?: Uint8Array
   }
 
   try {
@@ -1416,7 +1417,7 @@ export function decode(jpegData: BufferLike, userOpts?: DecoderOptions): (UintAr
       data: imageData,
       comments: decoder.comments.length > 0 ? decoder.comments : undefined,
       colorSpace: 'srgb' as const,
-    } as ImageData & { comments?: string[] }
+    } as JpegImageData & { comments?: string[], exifBuffer?: Uint8Array }
 
     if (decoder.comments.length > 0) {
       image.comments = decoder.comments

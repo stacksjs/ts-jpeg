@@ -22,7 +22,7 @@ export type UintArrRet = ImageData & {
 export interface ImageData {
   width: number
   height: number
-  data: Uint8ClampedArray | Buffer
+  data: Uint8Array | Uint8ClampedArray | Buffer
   colorSpace?: 'srgb'
 }
 
