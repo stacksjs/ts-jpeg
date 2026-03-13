@@ -2,7 +2,7 @@
 
 ## About
 
-TypeScript implementation of a performant JPEG encoder & decoder.
+A zero-dependency TypeScript library for encoding and decoding JPEG images with built-in memory management to prevent OOM errors. It supports RGB, CMYK, and grayscale color spaces, EXIF metadata preservation and extraction, configurable compression quality, and works in both browser and server environments. Inspired by jpeg-js.
 
 ## Linting
 
