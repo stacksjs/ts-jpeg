@@ -34,4 +34,4 @@ interface DecodeOptions {
 
 ## Examples
 
-[Add detailed examples]
+TODO: Add detailed examples

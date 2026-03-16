@@ -20,4 +20,4 @@ const decoded = decode(encodedData)
 
 ## Examples
 
-[Add specific examples from your decoder.ts implementation]
+TODO: Add specific examples from your decoder.ts implementation

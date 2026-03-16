@@ -20,4 +20,4 @@ const encoded = encode(data)
 
 ## Examples
 
-[Add specific examples from your encoder.ts implementation]
+TODO: Add specific examples from your encoder.ts implementation

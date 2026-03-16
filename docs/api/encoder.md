@@ -34,4 +34,4 @@ interface EncodeOptions {
 
 ## Examples
 
-[Add detailed examples]
+TODO: Add detailed examples

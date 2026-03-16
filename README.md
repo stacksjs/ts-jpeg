@@ -2,7 +2,7 @@
 
 [![npm version][npm-version-src]][npm-version-href]
 [![GitHub Actions][github-actions-src]][github-actions-href]
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Commitizen friendly][commitizen-src]][commitizen-href]
 <!-- [![npm downloads][npm-downloads-src]][npm-downloads-href] -->
 <!-- [![Codecov][codecov-src]][codecov-href] -->
 
@@ -200,21 +200,21 @@ bun test
 
 ## Changelog
 
-Please see our [releases](https://github.com/stackjs/jpgx/releases) page for more information on what has changed recently.
+Please see our [releases][releases-href] page for more information on what has changed recently.
 
 ## Contributing
 
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING][contributing-href] for details.
 
 ## Community
 
 For help, discussion about best practices, or any other conversation that would benefit from being searchable:
 
-[Discussions on GitHub](https://github.com/stacksjs/jpgx/discussions)
+[Discussions on GitHub][discussions-href]
 
 For casual chit-chat with others using this package:
 
-[Join the Stacks Discord Server](https://discord.gg/stacksjs)
+[Join the Stacks Discord Server][discord-href]
 
 ## Postcardware
 
@@ -224,18 +224,18 @@ Our address: Stacks.js, 12665 Village Ln #2306, Playa Vista, CA 90094, United St
 
 ## Credits
 
-Many thanks to [`jpeg-js`](https://github.com/jpeg-js/jpeg-js) and its contributors for inspiring this project.
+Many thanks to [`jpeg-js`][jpeg-js-href] and its contributors for inspiring this project.
 
 ## Sponsors
 
 We would like to extend our thanks to the following sponsors for funding Stacks development. If you are interested in becoming a sponsor, please reach out to us.
 
-- [JetBrains](https://www.jetbrains.com/)
-- [The Solana Foundation](https://solana.com/)
+- [JetBrains][jetbrains-href]
+- [The Solana Foundation][solana-href]
 
 ## License
 
-The MIT License (MIT). Please see [LICENSE](LICENSE.md) for more information.
+The MIT License (MIT). Please see [LICENSE][license-href] for more information.
 
 Made with 💙
 
@@ -247,3 +247,13 @@ Made with 💙
 
 <!-- [codecov-src]: https://img.shields.io/codecov/c/gh/stacksjs/jpgx/main?style=flat-square
 [codecov-href]: https://codecov.io/gh/stacksjs/jpgx -->
+[commitizen-src]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
+[commitizen-href]: http://commitizen.github.io/cz-cli/
+[releases-href]: https://github.com/stackjs/jpgx/releases
+[contributing-href]: .github/CONTRIBUTING.md
+[discussions-href]: https://github.com/stacksjs/jpgx/discussions
+[discord-href]: https://discord.gg/stacksjs
+[jpeg-js-href]: https://github.com/jpeg-js/jpeg-js
+[jetbrains-href]: https://www.jetbrains.com/
+[solana-href]: https://solana.com/
+[license-href]: LICENSE.md
