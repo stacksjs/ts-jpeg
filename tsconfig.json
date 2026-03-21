@@ -27,6 +27,6 @@
     "skipLibCheck": true
   },
   "exclude": [
-    "bunpress.config.ts"
+    "bunpress.ts"
   ]
 }
