@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@stacksjs/bunpress": "^0.1.4",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.2",
     "better-dx": "^0.2.7"
   },
   "git-hooks": {
