@@ -2,7 +2,7 @@
 
 ## Overview
 
-Documentation for all interfaces used in jpgx, providing detailed information about the structure and usage of each interface.
+Documentation for all interfaces used in ts-jpeg, providing detailed information about the structure and usage of each interface.
 
 ## Core Interfaces
 

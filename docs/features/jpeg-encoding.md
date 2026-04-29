@@ -1,11 +1,11 @@
 # JPEG Encoding
 
-jpgx provides a powerful JPEG encoder that converts raw image data into compressed JPEG format. This guide covers the encoding process and options.
+ts-jpeg provides a powerful JPEG encoder that converts raw image data into compressed JPEG format. This guide covers the encoding process and options.
 
 ## Basic Encoding
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 // Prepare image data (RGBA format)
 const imageData = {
@@ -112,7 +112,7 @@ const result = encode({
   height: 600,
   data: imageData,
   comments: [
-    'Created with jpgx',
+    'Created with ts-jpeg',
     'Author: Your Name',
     'Copyright 2025',
   ],
@@ -126,7 +126,7 @@ Comments are stored in COM markers and can be read back during decoding.
 Preserve EXIF metadata when re-encoding:
 
 ```typescript
-import { encode, decode } from 'jpgx'
+import { encode, decode } from 'ts-jpeg'
 
 // Decode original with EXIF
 const original = decode(originalJpegData)
@@ -229,7 +229,7 @@ catch (error) {
 ## Complete Example
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 // Create a gradient image
 const width = 256

@@ -1,11 +1,11 @@
 # JPEG Decoding
 
-jpgx provides a robust JPEG decoder that supports baseline, extended, and progressive JPEG formats. This guide covers the decoding process and options.
+ts-jpeg provides a robust JPEG decoder that supports baseline, extended, and progressive JPEG formats. This guide covers the decoding process and options.
 
 ## Basic Decoding
 
 ```typescript
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 
 // Read JPEG file
 const jpegData = await Bun.file('image.jpg').arrayBuffer()
@@ -149,7 +149,7 @@ catch (error) {
 ### Auto Detection
 
 ```typescript
-// Let jpgx detect the correct color space
+// Let ts-jpeg detect the correct color space
 const image = decode(jpegData, {
   colorTransform: undefined, // Auto (default)
 })
@@ -266,7 +266,7 @@ catch (error) {
 ## Complete Example
 
 ```typescript
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 
 async function processJpeg(path: string) {
   // Read file

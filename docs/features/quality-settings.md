@@ -1,13 +1,13 @@
 # Quality Settings
 
-jpgx provides fine-grained control over JPEG encoding quality. This guide explains how quality affects output and how to choose the right setting.
+ts-jpeg provides fine-grained control over JPEG encoding quality. This guide explains how quality affects output and how to choose the right setting.
 
 ## Quality Parameter
 
 The quality parameter ranges from 1 to 100:
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 // Quality 1-100
 const result = encode(imageData, 75)
@@ -41,7 +41,7 @@ Quality affects file size exponentially:
 ### Compare Quality Levels
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 function compareQualities(imageData: RawImageData) {
   const qualities = [30, 50, 70, 85, 95, 100]

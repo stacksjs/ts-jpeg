@@ -7,7 +7,7 @@ The decoder module handles data decoding operations.
 ## Usage
 
 ```typescript
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 
 // Example usage
 const decoded = decode(encodedData)

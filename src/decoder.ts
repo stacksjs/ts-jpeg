@@ -25,72 +25,36 @@
 import { Buffer } from 'node:buffer'
 import type { BufferLike, DecoderOptions, ImageData as JpegImageData, UintArrRet } from './types'
 
+/**
+ * Decode a byte array as ISO-8859-1 (Latin-1), one char per byte. Used for
+ * JPEG COM markers, which the spec leaves as opaque bytes — Latin-1 is the
+ * de-facto historical encoding and matches the previous implementation.
+ *
+ * Done in 8 KB chunks rather than `String.fromCharCode.apply(null, big)` so
+ * we don't blow the call stack on large inputs.
+ */
+function decodeBytesAsLatin1(bytes: Uint8Array): string {
+  const CHUNK = 8192
+  if (bytes.length <= CHUNK)
+    return String.fromCharCode.apply(null, bytes as unknown as number[])
+  let out = ''
+  for (let i = 0; i < bytes.length; i += CHUNK) {
+    const slice = bytes.subarray(i, Math.min(i + CHUNK, bytes.length))
+    out += String.fromCharCode.apply(null, slice as unknown as number[])
+  }
+  return out
+}
+
 class JpegImage {
   private static dctZigZag = new Int32Array([
-    0,
-    1,
-    8,
-    16,
-    9,
-    2,
-    3,
-    10,
-    17,
-    24,
-    32,
-    25,
-    18,
-    11,
-    4,
-    5,
-    12,
-    19,
-    26,
-    33,
-    40,
-    48,
-    41,
-    34,
-    27,
-    20,
-    13,
-    6,
-    7,
-    14,
-    21,
-    28,
-    35,
-    42,
-    49,
-    56,
-    57,
-    50,
-    43,
-    36,
-    29,
-    22,
-    15,
-    23,
-    30,
-    37,
-    44,
-    51,
-    58,
-    59,
-    52,
-    45,
-    38,
-    31,
-    39,
-    46,
-    53,
-    60,
-    61,
-    54,
-    47,
-    55,
-    62,
-    63,
+    0, 1, 8, 16, 9, 2, 3, 10,
+    17, 24, 32, 25, 18, 11, 4, 5,
+    12, 19, 26, 33, 40, 48, 41, 34,
+    27, 20, 13, 6, 7, 14, 21, 28,
+    35, 42, 49, 56, 57, 50, 43, 36,
+    29, 22, 15, 23, 30, 37, 44, 51,
+    58, 59, 52, 45, 38, 31, 39, 46,
+    53, 60, 61, 54, 47, 55, 62, 63,
   ])
 
   private static readonly dctCos1 = 4017 // cos(pi/16)
@@ -303,8 +267,12 @@ class JpegImage {
           const appData = readDataBlock()
 
           if (fileMarker === 0xFFFE) {
-            const comment = String.fromCharCode.apply(null, appData as any)
-            this.comments.push(comment)
+            // Decode in chunks: `String.fromCharCode.apply(null, big)` blows
+            // the call stack once `big.length` exceeds the host's argument
+            // limit (~125 k on V8/Bun). JPEG COM segments can be up to
+            // 65 533 bytes — usually fine, but a file containing many
+            // chained COM markers would trip this.
+            this.comments.push(decodeBytesAsLatin1(appData))
           }
 
           if (fileMarker === 0xFFE0) {

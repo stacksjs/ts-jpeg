@@ -1,6 +1,6 @@
 # Custom Profiles
 
-This guide covers creating and using custom encoding/decoding profiles for jpgx to standardize image processing across your application.
+This guide covers creating and using custom encoding/decoding profiles for ts-jpeg to standardize image processing across your application.
 
 ## Encoding Profiles
 
@@ -40,7 +40,7 @@ const encodingProfiles: Record<string, EncodingProfile> = {
 ### Profile-Based Encoding
 
 ```typescript
-import { encode, RawImageData } from 'jpgx'
+import { encode, RawImageData } from 'ts-jpeg'
 
 function encodeWithProfile(
   imageData: RawImageData,
@@ -119,7 +119,7 @@ const decodingProfiles: Record<string, DecodingProfile> = {
 ### Profile-Based Decoding
 
 ```typescript
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 
 function decodeWithProfile(
   data: Uint8Array,
@@ -191,7 +191,7 @@ const processingProfiles: Record<string, ProcessingProfile> = {
 ### Processing Function
 
 ```typescript
-import { decode, encode } from 'jpgx'
+import { decode, encode } from 'ts-jpeg'
 
 async function processWithProfile(
   inputData: Uint8Array,

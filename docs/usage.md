@@ -1,13 +1,13 @@
 # Usage
 
-jpgx provides a simple API for encoding and decoding JPEG images.
+ts-jpeg provides a simple API for encoding and decoding JPEG images.
 
 ## Encoding
 
 ### Basic Encoding
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 // Prepare raw image data (RGBA format)
 const imageData = {
@@ -30,13 +30,13 @@ await Bun.write('output.jpg', result.data)
 ### Encoding with Comments
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 const imageData = {
   width: 800,
   height: 600,
   data: new Uint8Array(800 * 600 * 4),
-  comments: ['Created with jpgx', 'Copyright 2025'],
+  comments: ['Created with ts-jpeg', 'Copyright 2025'],
 }
 
 const result = encode(imageData, 85)
@@ -45,7 +45,7 @@ const result = encode(imageData, 85)
 ### Encoding with EXIF Data
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 // Preserve EXIF data from a decoded image
 const originalJpeg = await Bun.file('original.jpg').arrayBuffer()
@@ -65,7 +65,7 @@ const result = encode({
 ### Basic Decoding
 
 ```typescript
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 
 // Read JPEG file
 const jpegData = await Bun.file('image.jpg').arrayBuffer()
@@ -81,7 +81,7 @@ console.log('Data length:', image.data.length)
 ### Decoding with Options
 
 ```typescript
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 
 const jpegData = await Bun.file('image.jpg').arrayBuffer()
 
@@ -99,7 +99,7 @@ const image = decode(new Uint8Array(jpegData), {
 ### Extracting Metadata
 
 ```typescript
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 
 const jpegData = await Bun.file('photo.jpg').arrayBuffer()
 const image = decode(new Uint8Array(jpegData))
@@ -120,7 +120,7 @@ if (image.comments) {
 ### Encoding from Canvas
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 const canvas = document.getElementById('myCanvas') as HTMLCanvasElement
 const ctx = canvas.getContext('2d')!
@@ -139,7 +139,7 @@ const blob = new Blob([result.data], { type: 'image/jpeg' })
 ### Decoding to Canvas
 
 ```typescript
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 
 // Fetch and decode JPEG
 const response = await fetch('image.jpg')
@@ -185,7 +185,7 @@ for (const quality of qualities) {
 ## Error Handling
 
 ```typescript
-import { decode, encode } from 'jpgx'
+import { decode, encode } from 'ts-jpeg'
 
 try {
   const image = decode(jpegData)

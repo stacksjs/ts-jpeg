@@ -7,7 +7,7 @@ The encoder module provides functionality for encoding data in various formats.
 ## Usage
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 // Example usage
 const encoded = encode(data)

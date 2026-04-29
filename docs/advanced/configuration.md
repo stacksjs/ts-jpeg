@@ -1,13 +1,13 @@
 # Advanced Configuration
 
-This guide covers advanced configuration options for jpgx, including custom profiles, memory management, and performance tuning.
+This guide covers advanced configuration options for ts-jpeg, including custom profiles, memory management, and performance tuning.
 
 ## Encoder Configuration
 
 ### Complete Encoder Options
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 // Full configuration
 const result = encode({
@@ -50,7 +50,7 @@ const printImage = encodeWithProfile(data, 'print')
 ### Full Decoder Options
 
 ```typescript
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 
 const image = decode(jpegData, {
   // Output format
@@ -199,7 +199,7 @@ const image = decode(jpegData, config)
 ### Auto Detection
 
 ```typescript
-// Let jpgx detect color space from JFIF/Adobe markers
+// Let ts-jpeg detect color space from JFIF/Adobe markers
 const image = decode(jpegData, {
   colorTransform: undefined, // Auto (default)
 })

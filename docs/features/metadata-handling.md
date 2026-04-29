@@ -1,6 +1,6 @@
 # Metadata Handling
 
-jpgx supports reading and preserving JPEG metadata including EXIF data, comments, and JFIF information. This guide covers working with metadata.
+ts-jpeg supports reading and preserving JPEG metadata including EXIF data, comments, and JFIF information. This guide covers working with metadata.
 
 ## Types of Metadata
 
@@ -16,7 +16,7 @@ jpgx supports reading and preserving JPEG metadata including EXIF data, comments
 ### EXIF Data
 
 ```typescript
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 
 const image = decode(jpegData)
 
@@ -47,14 +47,14 @@ if (image.comments && image.comments.length > 0) {
 ### Adding Comments
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 const result = encode({
   width: 800,
   height: 600,
   data: imageData,
   comments: [
-    'Created with jpgx',
+    'Created with ts-jpeg',
     'Author: John Doe',
     'Date: 2025-01-15',
   ],
@@ -66,7 +66,7 @@ const result = encode({
 When re-encoding, preserve original EXIF data:
 
 ```typescript
-import { encode, decode } from 'jpgx'
+import { encode, decode } from 'ts-jpeg'
 
 // Decode original
 const original = decode(originalJpegData)
@@ -103,11 +103,11 @@ The EXIF buffer contains raw EXIF data. Common fields include:
 
 ### Parsing EXIF
 
-jpgx returns raw EXIF bytes. Use a library like `exif-js` to parse:
+ts-jpeg returns raw EXIF bytes. Use a library like `exif-js` to parse:
 
 ```typescript
 // Example with a hypothetical EXIF parser
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 import { parseExif } from 'exif-parser-library'
 
 const image = decode(jpegData)

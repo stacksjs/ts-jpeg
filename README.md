@@ -6,7 +6,7 @@
 <!-- [![npm downloads][npm-downloads-src]][npm-downloads-href] -->
 <!-- [![Codecov][codecov-src]][codecov-href] -->
 
-# jpgx
+# ts-jpeg
 
 > A TypeScript library for encoding & decoding JPEG images with robust memory management.
 
@@ -26,11 +26,11 @@
 ## Installation
 
 ```bash
-npm install jpgx
+npm install ts-jpeg
 # or
-pnpm add jpgx
+pnpm add ts-jpeg
 # or
-bun i jpgx
+bun i ts-jpeg
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ bun i jpgx
 ### Decoding JPEG Images
 
 ```ts
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 
 // Basic decoding
 const jpegBuffer = await fetch('image.jpg').then(res => res.arrayBuffer())
@@ -60,7 +60,7 @@ const { width, height, data, exifBuffer, comments } = image
 ### Encoding JPEG Images
 
 ```ts
-import { JPEGEncoder } from 'jpgx'
+import { JPEGEncoder } from 'ts-jpeg'
 
 // Create an encoder with quality setting (1-100)
 const encoder = new JPEGEncoder(85) // 85% quality
@@ -75,7 +75,7 @@ const jpegData = encoder.encode({
   width,
   height,
   data: rgbData,
-  comments: ['Created with jpgx'],
+  comments: ['Created with ts-jpeg'],
   exifBuffer: existingExifData // Optional
 })
 
@@ -88,7 +88,7 @@ await fs.writeFile('output.jpg', jpegData)
 The library includes built-in memory management to prevent out-of-memory errors:
 
 ```ts
-import { decode, JpegImage } from 'jpgx'
+import { decode, JpegImage } from 'ts-jpeg'
 
 // Set global memory limits
 JpegImage.resetMaxMemoryUsage(512 _ 1024 _ 1024) // 512MB limit
@@ -218,7 +218,7 @@ For casual chit-chat with others using this package:
 
 ## Postcardware
 
-“Software that is free, but hopes for a postcard.” We love receiving postcards from around the world showing where `jpgx` is being used! We showcase them on our website too.
+“Software that is free, but hopes for a postcard.” We love receiving postcards from around the world showing where `ts-jpeg` is being used! We showcase them on our website too.
 
 Our address: Stacks.js, 12665 Village Ln #2306, Playa Vista, CA 90094, United States 🌎
 
@@ -240,18 +240,18 @@ The MIT License (MIT). Please see [LICENSE][license-href] for more information.
 Made with 💙
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/jpgx?style=flat-square
-[npm-version-href]: https://npmjs.com/package/jpgx
-[github-actions-src]: https://img.shields.io/github/actions/workflow/status/stacksjs/jpgx/ci.yml?style=flat-square&branch=main
-[github-actions-href]: https://github.com/stacksjs/jpgx/actions?query=workflow%3Aci
+[npm-version-src]: https://img.shields.io/npm/v/ts-jpeg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/ts-jpeg
+[github-actions-src]: https://img.shields.io/github/actions/workflow/status/stacksjs/ts-jpeg/ci.yml?style=flat-square&branch=main
+[github-actions-href]: https://github.com/stacksjs/ts-jpeg/actions?query=workflow%3Aci
 
-<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/stacksjs/jpgx/main?style=flat-square
-[codecov-href]: https://codecov.io/gh/stacksjs/jpgx -->
+<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/stacksjs/ts-jpeg/main?style=flat-square
+[codecov-href]: https://codecov.io/gh/stacksjs/ts-jpeg -->
 [commitizen-src]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
 [commitizen-href]: http://commitizen.github.io/cz-cli/
-[releases-href]: https://github.com/stackjs/jpgx/releases
+[releases-href]: https://github.com/stackjs/ts-jpeg/releases
 [contributing-href]: .github/CONTRIBUTING.md
-[discussions-href]: https://github.com/stacksjs/jpgx/discussions
+[discussions-href]: https://github.com/stacksjs/ts-jpeg/discussions
 [discord-href]: https://discord.gg/stacksjs
 [jpeg-js-href]: https://github.com/jpeg-js/jpeg-js
 [jetbrains-href]: https://www.jetbrains.com/

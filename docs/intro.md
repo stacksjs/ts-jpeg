@@ -51,7 +51,7 @@ Please review the [Contributing Guide](https://github.com/stacksjs/contributing)
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/stacksjs/jpgx.svg?variant=adaptive)](https://starchart.cc/stacksjs/jpgx)
+[![Stargazers over time](https://starchart.cc/stacksjs/ts-jpeg.svg?variant=adaptive)](https://starchart.cc/stacksjs/ts-jpeg)
 
 ## Community
 

@@ -1,7 +1,7 @@
 import type { BunpressConfig } from 'bunpress'
 
 const config: BunpressConfig = {
-  name: 'jpgx',
+  name: 'ts-jpeg',
   description: 'TypeScript implementation of a performant JPEG encoder & decoder',
   theme: '@bunpress/theme-docs',
   srcDir: './docs',

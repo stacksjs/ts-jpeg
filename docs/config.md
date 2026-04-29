@@ -1,13 +1,13 @@
 # Configuration
 
-jpgx provides configuration options for both encoding and decoding operations.
+ts-jpeg provides configuration options for both encoding and decoding operations.
 
 ## Encoder Options
 
 The `encode` function accepts raw image data and an optional quality parameter:
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 const result = encode(imageData, quality)
 ```
@@ -41,7 +41,7 @@ Default quality is 50 if not specified.
 The `decode` function accepts JPEG data and optional configuration:
 
 ```typescript
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 
 const image = decode(jpegData, options)
 ```

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Comprehensive guide for implementing jpgx effectively in production environments.
+Comprehensive guide for implementing ts-jpeg effectively in production environments.
 
 ## Error Handling
 

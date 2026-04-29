@@ -1,6 +1,6 @@
 # CI/CD Integration
 
-This guide covers integrating jpgx into CI/CD pipelines for automated image processing, validation, and optimization.
+This guide covers integrating ts-jpeg into CI/CD pipelines for automated image processing, validation, and optimization.
 
 ## GitHub Actions
 
@@ -28,7 +28,7 @@ jobs:
 
       - name: Install dependencies
 
-        run: bun add jpgx
+        run: bun add ts-jpeg
 
       - name: Optimize images
 
@@ -65,15 +65,15 @@ jobs:
 
       - uses: oven-sh/setup-bun@v1
 
-      - name: Install jpgx
+      - name: Install ts-jpeg
 
-        run: bun add jpgx
+        run: bun add ts-jpeg
 
       - name: Validate JPEG files
 
         run: |
           bun run << 'EOF'
-          import { decode } from 'jpgx'
+          import { decode } from 'ts-jpeg'
           import { Glob } from 'bun'
 
           const glob = new Glob('**/*.{jpg,jpeg}')
@@ -113,9 +113,9 @@ jobs:
 
       - uses: oven-sh/setup-bun@v1
 
-      - name: Install jpgx
+      - name: Install ts-jpeg
 
-        run: bun add jpgx
+        run: bun add ts-jpeg
 
       - name: Check image sizes
 
@@ -124,7 +124,7 @@ jobs:
           MAX_RESOLUTION_MP=5
 
           bun run << 'EOF'
-          import { decode } from 'jpgx'
+          import { decode } from 'ts-jpeg'
           import { Glob } from 'bun'
 
           const maxSizeKB = Number(process.env.MAX_SIZE_KB)
@@ -177,7 +177,7 @@ validate-images:
   image: oven/bun:latest
   script:
 
-    - bun add jpgx
+    - bun add ts-jpeg
     - bun run scripts/validate-images.ts
 
   rules:
@@ -191,7 +191,7 @@ optimize-images:
   image: oven/bun:latest
   script:
 
-    - bun add jpgx
+    - bun add ts-jpeg
     - bun run scripts/optimize-images.ts
 
   artifacts:
@@ -207,7 +207,7 @@ optimize-images:
 
 ```typescript
 // scripts/optimize-images.ts
-import { decode, encode } from 'jpgx'
+import { decode, encode } from 'ts-jpeg'
 import { Glob } from 'bun'
 import path from 'path'
 
@@ -227,7 +227,7 @@ async function optimizeImage(inputPath: string, outputPath: string) {
     const scale = Math.min(MAX_WIDTH / width, MAX_HEIGHT / height)
     width = Math.round(width _ scale)
     height = Math.round(height _ scale)
-    // Note: jpgx doesn't resize - use another library for that
+    // Note: ts-jpeg doesn't resize - use another library for that
   }
 
   // Re-encode with quality setting
@@ -283,7 +283,7 @@ main()
 
 ```typescript
 // scripts/validate-images.ts
-import { decode } from 'jpgx'
+import { decode } from 'ts-jpeg'
 import { Glob } from 'bun'
 
 interface ValidationResult {

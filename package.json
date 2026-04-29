@@ -1,17 +1,17 @@
 {
-  "name": "jpgx",
+  "name": "ts-jpeg",
   "type": "module",
   "version": "0.2.0",
   "description": "TypeScript implementation of a performant JPEG encoder & decoder.",
   "author": "Chris Breuer <chris@stacksjs.org>",
   "license": "MIT",
-  "homepage": "https://github.com/stacksjs/jpgx#readme",
+  "homepage": "https://github.com/stacksjs/ts-jpeg#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stacksjs/jpgx.git"
+    "url": "git+https://github.com/stacksjs/ts-jpeg.git"
   },
   "bugs": {
-    "url": "https://github.com/stacksjs/jpgx/issues"
+    "url": "https://github.com/stacksjs/ts-jpeg/issues"
   },
   "keywords": [
     "jpeg",
@@ -19,7 +19,7 @@
     "encoder",
     "decoder",
     "typescript",
-    "jpgx",
+    "ts-jpeg",
     "library"
   ],
   "exports": {
@@ -49,6 +49,9 @@
     "changelog": "bunx logsmith --verbose",
     "changelog:generate": "bunx logsmith --output CHANGELOG.md",
     "release": "bun --bun run changelog:generate && bunx --bun bumpx prompt --recursive",
+    "publish:patch": "bun --bun run changelog:generate && bunx --bun bumpx patch --yes",
+    "publish:minor": "bun --bun run changelog:generate && bunx --bun bumpx minor --yes",
+    "publish:major": "bun --bun run changelog:generate && bunx --bun bumpx major --yes",
     "postinstall": "bunx git-hooks",
     "dev:docs": "bun --bun bunpress dev docs",
     "build:docs": "bun --bun bunpress build docs",

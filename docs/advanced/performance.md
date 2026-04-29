@@ -1,6 +1,6 @@
 # Performance
 
-This guide covers performance optimization strategies for jpgx, including memory management, batch processing, and parallel operations.
+This guide covers performance optimization strategies for ts-jpeg, including memory management, batch processing, and parallel operations.
 
 ## Encoding Performance
 
@@ -9,7 +9,7 @@ This guide covers performance optimization strategies for jpgx, including memory
 Quality has minimal impact on encoding speed:
 
 ```typescript
-import { encode } from 'jpgx'
+import { encode } from 'ts-jpeg'
 
 // Both have similar encoding time
 const low = encode(imageData, 30)   // ~50ms

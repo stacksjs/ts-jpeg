@@ -1,31 +1,31 @@
 # Installation
 
-Installing jpgx is straightforward with any JavaScript package manager.
+Installing ts-jpeg is straightforward with any JavaScript package manager.
 
 ## Package Managers
 
 ### Bun (Recommended)
 
 ```bash
-bun add jpgx
+bun add ts-jpeg
 ```
 
 ### npm
 
 ```bash
-npm install jpgx
+npm install ts-jpeg
 ```
 
 ### pnpm
 
 ```bash
-pnpm add jpgx
+pnpm add ts-jpeg
 ```
 
 ### Yarn
 
 ```bash
-yarn add jpgx
+yarn add ts-jpeg
 ```
 
 ## Requirements
@@ -35,10 +35,10 @@ yarn add jpgx
 
 ## Verify Installation
 
-After installation, verify jpgx is working:
+After installation, verify ts-jpeg is working:
 
 ```typescript
-import { encode, decode } from 'jpgx'
+import { encode, decode } from 'ts-jpeg'
 
 // Create a simple test image (1x1 red pixel)
 const testImage = {
@@ -56,11 +56,11 @@ console.log('Decoded dimensions:', decoded.width, 'x', decoded.height)
 
 ## Browser Usage
 
-jpgx works in modern browsers without any bundler configuration:
+ts-jpeg works in modern browsers without any bundler configuration:
 
 ```html
 <script type="module">
-import { encode, decode } from 'https://esm.sh/jpgx'
+import { encode, decode } from 'https://esm.sh/ts-jpeg'
 
 // Use encode/decode in the browser
 </script>
@@ -81,12 +81,12 @@ For TypeScript projects, ensure your `tsconfig.json` includes:
 
 ## Development Setup
 
-If you want to contribute to jpgx or build from source:
+If you want to contribute to ts-jpeg or build from source:
 
 ```bash
 # Clone the repository
-git clone https://github.com/stacksjs/jpgx.git
-cd jpgx
+git clone https://github.com/stacksjs/ts-jpeg.git
+cd ts-jpeg
 
 # Install dependencies
 bun install

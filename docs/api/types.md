@@ -2,7 +2,7 @@
 
 ## Overview
 
-Comprehensive documentation of all type definitions used in jpgx.
+Comprehensive documentation of all type definitions used in ts-jpeg.
 
 ## Core Types
 
@@ -134,7 +134,7 @@ function isValidEncoding(encoding: unknown): encoding is SupportedEncoding {
 ### Type Checking
 
 ```typescript
-import { isJpgxError, isValidFormat } from 'jpgx'
+import { isJpgxError, isValidFormat } from 'ts-jpeg'
 
 try {
   const result = encode(data)
@@ -142,7 +142,7 @@ try {
 }
 catch (error) {
   if (isJpgxError(error)) {
-    // Handle jpgx specific error
+    // Handle ts-jpeg specific error
     console.error(`Error code: ${error.code}`)
   }
   else {
@@ -155,7 +155,7 @@ catch (error) {
 ### Type Assertions
 
 ```typescript
-import { SupportedEncoding, SupportedFormat } from 'jpgx'
+import { SupportedEncoding, SupportedFormat } from 'ts-jpeg'
 
 function processData(format: unknown, encoding: unknown) {
   if (!isValidFormat(format)) {

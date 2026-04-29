@@ -3,7 +3,7 @@ import type { BuddyBotConfig } from 'buddy-bot'
 const config: BuddyBotConfig = {
   repository: {
     owner: 'stacksjs',
-    name: 'jpgx',
+    name: 'ts-jpeg',
     provider: 'github',
     // Uses GITHUB_TOKEN by default
   },
