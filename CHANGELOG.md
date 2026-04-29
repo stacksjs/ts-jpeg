@@ -1,3 +1,32 @@
+[Compare changes](https://github.com/stacksjs/ts-jpeg/compare/v0.3.0...v0.3.1)
+
+### 🤖 Continuous Integration
+
+- also publish to pantry registry on tag push ([4bd2e19](https://github.com/stacksjs/ts-jpeg/commit/4bd2e19)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+### 🧹 Chores
+
+- release v0.3.1 ([5eb3fea](https://github.com/stacksjs/ts-jpeg/commit/5eb3fea)) _(by Chris <chrisbreuer93@gmail.com>)_
+- rename publish:* scripts to release:* ([b8481a6](https://github.com/stacksjs/ts-jpeg/commit/b8481a6)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+### Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
+[Compare changes](https://github.com/stacksjs/ts-jpeg/compare/v0.3.0...HEAD)
+
+### 🤖 Continuous Integration
+
+- also publish to pantry registry on tag push ([4bd2e19](https://github.com/stacksjs/ts-jpeg/commit/4bd2e19)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+### 🧹 Chores
+
+- rename publish:* scripts to release:* ([b8481a6](https://github.com/stacksjs/ts-jpeg/commit/b8481a6)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+### Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/ts-jpeg/compare/v0.2.0...v0.3.0)
 
 ### 💥 Breaking Changes
