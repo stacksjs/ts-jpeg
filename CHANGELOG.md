@@ -7,7 +7,7 @@
 ### 🧹 Chores
 
 - release v0.3.1 ([5eb3fea](https://github.com/stacksjs/ts-jpeg/commit/5eb3fea)) _(by Chris <chrisbreuer93@gmail.com>)_
-- rename publish:* scripts to release:* ([b8481a6](https://github.com/stacksjs/ts-jpeg/commit/b8481a6)) _(by Chris <chrisbreuer93@gmail.com>)_
+- rename publish:_ scripts to release:_ ([b8481a6](https://github.com/stacksjs/ts-jpeg/commit/b8481a6)) _(by Chris <chrisbreuer93@gmail.com>)_
 
 ### Contributors
 
@@ -21,7 +21,7 @@
 
 ### 🧹 Chores
 
-- rename publish:* scripts to release:* ([b8481a6](https://github.com/stacksjs/ts-jpeg/commit/b8481a6)) _(by Chris <chrisbreuer93@gmail.com>)_
+- rename publish:_ scripts to release:_ ([b8481a6](https://github.com/stacksjs/ts-jpeg/commit/b8481a6)) _(by Chris <chrisbreuer93@gmail.com>)_
 
 ### Contributors
 
