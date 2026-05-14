@@ -59,9 +59,9 @@
     "typecheck": "bun --bun tsc --noEmit"
   },
   "devDependencies": {
-    "@stacksjs/bunpress": "^0.1.4",
+    "@stacksjs/bunpress": "^0.1.5",
     "typescript": "^5.9.3",
-    "better-dx": "^0.2.7"
+    "better-dx": "^0.2.15"
   },
   "git-hooks": {
     "pre-commit": {
