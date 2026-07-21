@@ -1,3 +1,18 @@
+[Compare changes](https://github.com/stacksjs/ts-jpeg/compare/v0.3.3...v0.3.4)
+
+## 🐛 Bug Fixes
+
+- remove consumer postinstall hook ([2cf7bc0](https://github.com/stacksjs/ts-jpeg/commit/2cf7bc0)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🧹 Chores
+
+- release v0.3.4 ([9b1e69f](https://github.com/stacksjs/ts-jpeg/commit/9b1e69f)) _(by Chris <chrisbreuer93@gmail.com>)_
+- **deps**: declare bun ^1.3.14 in deps.yaml ([b435631](https://github.com/stacksjs/ts-jpeg/commit/b435631)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/ts-jpeg/compare/v0.3.0...v0.3.1)
 
 ### 🤖 Continuous Integration

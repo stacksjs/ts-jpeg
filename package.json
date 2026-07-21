@@ -2,7 +2,7 @@
   "name": "ts-jpeg",
   "type": "module",
   "sideEffects": false,
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "TypeScript implementation of a performant JPEG encoder & decoder.",
   "author": "Chris Breuer <chris@stacksjs.org>",
   "license": "MIT",
