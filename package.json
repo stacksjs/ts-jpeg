@@ -53,7 +53,6 @@
     "release:patch": "bunx --bun bumpx patch --yes",
     "release:minor": "bunx --bun bumpx minor --yes",
     "release:major": "bunx --bun bumpx major --yes",
-    "postinstall": "bunx git-hooks",
     "dev:docs": "bun --bun bunpress dev docs",
     "build:docs": "bun --bun bunpress build docs",
     "preview:docs": "bun --bun bunpress preview docs",
