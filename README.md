@@ -252,7 +252,7 @@ Made with 💙
 [releases-href]: https://github.com/stackjs/ts-jpeg/releases
 [contributing-href]: .github/CONTRIBUTING.md
 [discussions-href]: https://github.com/stacksjs/ts-jpeg/discussions
-[discord-href]: https://discord.gg/stacksjs
+[discord-href]: https://stacksjs.com/discord
 [jpeg-js-href]: https://github.com/jpeg-js/jpeg-js
 [jetbrains-href]: https://www.jetbrains.com/
 [solana-href]: https://solana.com/
