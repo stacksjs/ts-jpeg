@@ -1,3 +1,21 @@
+[Compare changes](https://github.com/stacksjs/ts-jpeg/compare/v0.3.4...v0.3.5)
+
+## ⚡ Performance Improvements
+
+- **build**: cut the waste out of the published output ([9a12d5f](https://github.com/stacksjs/ts-jpeg/commit/9a12d5f)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 📚 Documentation
+
+- link the community as stacksjs.com/discord ([6159c99](https://github.com/stacksjs/ts-jpeg/commit/6159c99)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🧹 Chores
+
+- release v0.3.5 ([9ce1ace](https://github.com/stacksjs/ts-jpeg/commit/9ce1ace)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/ts-jpeg/compare/v0.3.3...v0.3.4)
 
 ## 🐛 Bug Fixes
