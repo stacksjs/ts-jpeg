@@ -1,10 +1,9 @@
-import type { BunpressConfig } from 'bunpress'
+import type { BunPressConfig } from '@stacksjs/bunpress'
 
-const config: BunpressConfig = {
-  name: 'ts-jpeg',
+const config: BunPressConfig = {
+  title: 'ts-jpeg',
   description: 'TypeScript implementation of a performant JPEG encoder & decoder',
-  theme: '@bunpress/theme-docs',
-  srcDir: './docs',
+  docsDir: './docs',
   outDir: './dist/docs',
   sidebar: [
     {
