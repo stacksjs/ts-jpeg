@@ -2,6 +2,7 @@ import { dts } from 'bun-plugin-dtsx'
 
 // eslint-disable-next-line ts/no-top-level-await
 await Bun.build({
+  minify: true,
   entrypoints: ['src/index.ts'],
   target: 'browser',
   outdir: './dist',
