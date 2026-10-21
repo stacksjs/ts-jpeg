@@ -257,3 +257,11 @@ Made with 💙
 [jetbrains-href]: https://www.jetbrains.com/
 [solana-href]: https://solana.com/
 [license-href]: LICENSE.md
+
+### Lossless optimization
+
+`optimize(bytes)` removes JPEG comment segments without decoding or re-encoding.
+EXIF orientation, ICC profiles, scan data, restart markers and trailing content
+are preserved. Multi-picture (MPF/MPO) files pass through unchanged to preserve
+image offsets. Malformed containers throw; already optimal inputs return the
+same `Uint8Array`.
